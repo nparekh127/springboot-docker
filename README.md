@@ -101,8 +101,15 @@ The included `Dockerfile` uses a multi-stage build to keep the final image small
 2. **Runtime stage** — runs the JAR on a minimal Alpine JRE image.
 
 ```bash
-docker build -t springboot-docker:latest .
+docker build -t springboot-docker .
+docker images
+docker tag springboot-docker nparekh127/springboot-docker-img:v1.0
+docker images
+docker login
+docker push nparekh127/springboot-docker-img:v1.0
 ```
+
+
 
 ### Run the Docker Container
 
