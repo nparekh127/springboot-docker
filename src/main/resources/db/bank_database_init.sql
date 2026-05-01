@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `transaction` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 5. Position table
-CREATE TABLE IF NOT EXISTS position (
+CREATE TABLE IF NOT EXISTS `position` (
     posn_id                     INT            NOT NULL AUTO_INCREMENT,
     sec_id                      INT            NOT NULL,
     acct_id                     INT            NOT NULL,
@@ -144,7 +144,7 @@ INSERT INTO `transaction` (tran_id, sec_id, acct_id, order_id, book_date, tran_d
 (12, 2,  10, 12, '2024-09-10 09:35:00', '2024-09-12 00:00:00', 'Buy',  15,   380.0000,  380.0000);
 
 -- Positions (net holdings after transactions above)
-INSERT INTO position (posn_id, sec_id, acct_id, qty, avg_unit_price_in_sec_ccy, avg_unit_price_in_acct_ccy) VALUES
+INSERT INTO `position` (posn_id, sec_id, acct_id, qty, avg_unit_price_in_sec_ccy, avg_unit_price_in_acct_ccy) VALUES
 (1,  1,  1,  30,  187.5000,   187.5000),
 (2,  2,  1,  20,  375.0000,   375.0000),
 (3,  3,  7,  50,  2450.0000,  2450.0000),
